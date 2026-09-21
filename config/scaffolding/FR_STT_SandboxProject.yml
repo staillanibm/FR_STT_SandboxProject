@@ -8,6 +8,7 @@ packages:
   gitUsername: staillanibm
   gitBranch: main
 - name: WmFlatFile
+  version: 10.7.0.0.39
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
