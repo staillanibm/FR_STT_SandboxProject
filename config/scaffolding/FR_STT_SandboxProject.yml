@@ -21,10 +21,6 @@ packages:
   gitUrl: https://github.com/staillanibm
   gitUsername: staillanibm
   gitBranch: main
-security:
-- name: sttUtils
-  allowedServices: []
-  javaServiceSetting: ALL
 services:
 - serviceName: project.fr_stt_sandbox.WmAmazonS3Provider.com_webmethods_cloudstreams_amazon_s3_aws4_v20060301.connections:s3
   packages:
@@ -110,11 +106,11 @@ services:
     wpmRegistry: licensed
   - name: sttUtils
     version: "1.0"
-- serviceName: pub.string:stringToBytes
+- serviceName: sttUtils.services.java:readFileAsString
   packages:
-  - name: WmPublic
-    version: 12.1.0.0.1032
-- serviceName: pub.io:readAsString
+  - name: sttUtils
+    version: "1.0"
+- serviceName: pub.string:stringToBytes
   packages:
   - name: WmPublic
     version: 12.1.0.0.1032
@@ -126,6 +122,18 @@ services:
   packages:
   - name: WmPublic
     version: 12.1.0.0.1032
+- serviceName: project.fr_stt_sandbox.integrations:readFile
+  packages:
+  - name: FR_STT_SandboxProject
+    version: "1.0"
+  - name: WmFlatFile
+    version: 10.7.0.0.39
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: sttUtils
+    version: "1.0"
 configurationVariables:
   jdbc.SAP TxStore Pool.maxConns: "10"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.minimumPoolSize
