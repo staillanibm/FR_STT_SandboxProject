@@ -1687,7 +1687,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">java.math.BigInteger</value>
+  <value name="xml">java.lang.Long</value>
 </Values>
 </DATA>
 </MAPSET>
@@ -1705,12 +1705,6 @@
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventId;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/contractId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/contractId;1;0">
-</MAPCOPY>
-
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/customerId;1;0">
-</MAPCOPY>
-
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/assetType;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/assetType;1;0">
 </MAPCOPY>
 
@@ -1725,6 +1719,12 @@
 </Values>
 </DATA>
 </MAPSET>
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/customerId;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/contractId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/contractId;1;0">
+</MAPCOPY>
 </MAP>
 
 <INVOKE NAME="Invoke predefined:com.wm.adapter.wmkafka.KafkaAdapter" TIMEOUT="" SERVICE="project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:produceContractEvent" VALIDATE-IN="" VALIDATE-OUT="" DISABLED="true">
