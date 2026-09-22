@@ -15,6 +15,11 @@ packages:
   version: 9.6.0.0.26
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: JcPublicTools
+  gitServerName: staillanibm
+  gitUrl: https://github.com/johnpcarter
+  gitUsername: staillanibm
+  gitBranch: main
 services:
 - serviceName: project.fr_stt_sandbox.WmAmazonS3Provider.com_webmethods_cloudstreams_amazon_s3_aws4_v20060301.connections:s3
   packages:
