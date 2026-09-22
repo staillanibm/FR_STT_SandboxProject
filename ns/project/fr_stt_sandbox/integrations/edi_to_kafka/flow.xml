@@ -900,9 +900,6 @@
 <MAPDELETE FIELD="/bytes;3;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/ffValues;2;0">
-</MAPDELETE>
-
 <MAPDELETE FIELD="/ffIterator;3;0">
 </MAPDELETE>
 
@@ -911,11 +908,22 @@
 
 <MAPDELETE FIELD="/errors;2;1">
 </MAPDELETE>
+
+<MAPDELETE FIELD="/ffSchema;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/skipWhiteSpace;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/ffData;3;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/ffValues;2;0">
+</MAPDELETE>
 </MAP>
 </INVOKE>
 
 <MAP NAME="TRANSFORM" TIMEOUT="" MODE="STANDALONE">
-  <COMMENT>Map event</COMMENT>
   <MAPTARGET>
 
 <Values version="2.0">
@@ -929,39 +937,6 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffData</value>
-        <value name="field_type">object</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffSchema</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">skipWhiteSpace</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
@@ -994,39 +969,6 @@
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffData</value>
-        <value name="field_type">object</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffSchema</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">skipWhiteSpace</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
@@ -1047,30 +989,6 @@
 
   <!-- nodes -->
 
-<MAPINVOKE NAME="Math" SERVICE="pub.math:toNumber" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
-
-  <!-- nodes -->
-
-<MAP MODE="INVOKEINPUT">
-
-  <!-- nodes -->
-
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/amount;1;0" TO="/num;1;0">
-</MAPCOPY>
-
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/convertAs;1;0">
-</MAPSET>
-</MAP>
-
-<MAP MODE="INVOKEOUTPUT">
-
-  <!-- nodes -->
-
-<MAPCOPY FROM="/num;3;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/amount;3.7;0">
-</MAPCOPY>
-</MAP>
-</MAPINVOKE>
-
 <MAPINVOKE NAME="Date" SERVICE="pub.date:dateTimeFormat" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
 
   <!-- nodes -->
@@ -1083,9 +1001,21 @@
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/currentPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">yyyyMMddHHmmss</value>
+</Values>
+</DATA>
 </MAPSET>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/newPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">yyyy-MM-dd'T'HH:mm:ss.SSSz</value>
+</Values>
+</DATA>
 </MAPSET>
 </MAP>
 
@@ -1098,22 +1028,79 @@
 </MAP>
 </MAPINVOKE>
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventId;1;0">
+<MAPINVOKE NAME="Math" SERVICE="pub.math:toNumber" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/amount;1;0" TO="/num;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/assetType;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/assetType;1;0">
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/convertAs;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">java.lang.Long</value>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/num;3;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/amount;3.7;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE NAME="String" SERVICE="pub.string:concat" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/contractId;1;0" TO="/inString1;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/customerId;1;0">
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/HDR;2;0/fileDate;1;0" TO="/inString2;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/value;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventId;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/currency;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/currency;1;0">
 </MAPCOPY>
 
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/contractId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/contractId;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/currency;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/currency;1;0">
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/assetType;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/assetType;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/customerId;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventType;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">LeaseContractCreated</value>
+</Values>
+</DATA>
 </MAPSET>
 
 <MAPDELETE FIELD="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff">
@@ -1320,39 +1307,6 @@
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffData</value>
-        <value name="field_type">object</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffSchema</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">skipWhiteSpace</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
@@ -1392,39 +1346,6 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffData</value>
-        <value name="field_type">object</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffSchema</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">skipWhiteSpace</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
@@ -1625,39 +1546,6 @@
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffData</value>
-        <value name="field_type">object</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffSchema</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">skipWhiteSpace</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
@@ -1720,39 +1608,6 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffData</value>
-        <value name="field_type">object</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">ffSchema</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">skipWhiteSpace</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
