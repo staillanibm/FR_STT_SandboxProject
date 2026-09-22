@@ -1333,7 +1333,7 @@
 </MAPCOPY>
 </MAP>
 
-<MAP NAME="TRANSFORM" TIMEOUT="" MODE="STANDALONE" DISABLED="true">
+<MAP NAME="TRANSFORM" TIMEOUT="" MODE="STANDALONE">
   <MAPTARGET>
 
 <Values version="2.0">
@@ -1680,7 +1680,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/amount;1;0" TO="/num;1;0">
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/amount;1;0" TO="/num;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/convertAs;1;0">
@@ -1702,15 +1702,6 @@
 </MAP>
 </MAPINVOKE>
 
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventType;1;0">
-  <DATA ENCODING="XMLValues" I18N="true">
-
-<Values version="2.0">
-  <value name="xml">LeaseContractCreated</value>
-</Values>
-</DATA>
-</MAPSET>
-
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventId;1;0">
 </MAPCOPY>
 
@@ -1725,6 +1716,15 @@
 
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/currency;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/currency;1;0">
 </MAPCOPY>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventType;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">LeaseContractCreated</value>
+</Values>
+</DATA>
+</MAPSET>
 </MAP>
 
 <INVOKE NAME="Invoke predefined:com.wm.adapter.wmkafka.KafkaAdapter" TIMEOUT="" SERVICE="project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:produceContractEvent" VALIDATE-IN="" VALIDATE-OUT="" DISABLED="true">
