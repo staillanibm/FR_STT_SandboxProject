@@ -924,6 +924,7 @@
 </INVOKE>
 
 <MAP NAME="TRANSFORM" TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map EDI content to Kafka event</COMMENT>
   <MAPTARGET>
 
 <Values version="2.0">
