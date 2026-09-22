@@ -25,7 +25,7 @@
             <value name="field_usereditable">false</value>
           </record>
           <value name="is_public">false</value>
-          <value name="field_name">ediString</value>
+          <value name="field_name">ediFile</value>
           <value name="field_type">string</value>
           <value name="field_dim">0</value>
           <value name="nillable">true</value>
@@ -63,7 +63,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1790064530187</value>
+    <value name="lastModifiedDate">1790064853347</value>
     <value name="displayName">edi_to_kafka</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -96,6 +96,24 @@
         <value name="nodePathForDebug">0</value>
       </record>
       <record name="/1" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">IO</value>
+          <value name="groupName">io</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">readAsString</value>
+          <value name="serviceName">pub.io:readAsString</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">2</number>
+        <value name="nodePathNew">1</value>
+        <number name="nodeIndex" type="Long">1</number>
+        <number name="lineNumberForDebug" type="Long">2</number>
+      </record>
+      <record name="/2" javaclass="com.wm.util.Values">
         <value name="name">Flat File</value>
         <value name="itemType">APPS</value>
         <record name="operation" javaclass="com.wm.util.Values">
@@ -159,7 +177,7 @@
         <Boolean name="accountReferenceResolved">true</Boolean>
         <value name="nodePathForDebug">1</value>
       </record>
-      <record name="/2" javaclass="com.wm.util.Values">
+      <record name="/3" javaclass="com.wm.util.Values">
         <value name="itemType">CONTROLS</value>
         <value name="name">TRANSFORM</value>
         <number name="ui_step_index" type="Long">5</number>
@@ -178,8 +196,8 @@
         </array>
         <value name="nodePathForDebug">4</value>
       </record>
-      <null name="/2/0"/>
-      <record name="/3" javaclass="com.wm.util.Values">
+      <null name="/3/0"/>
+      <record name="/4" javaclass="com.wm.util.Values">
         <value name="itemType">CONTROLS</value>
         <value name="name">TRANSFORM</value>
         <number name="ui_step_index" type="Long">6</number>
@@ -198,7 +216,7 @@
         </array>
         <value name="nodePathForDebug">5</value>
       </record>
-      <record name="/3/0" javaclass="com.wm.util.Values">
+      <record name="/4/0" javaclass="com.wm.util.Values">
         <value name="itemType">SERVICES</value>
         <record name="serviceName" javaclass="com.wm.util.Values">
           <value name="displayName">toNumber</value>
@@ -210,7 +228,7 @@
         </array>
         <value name="nodePathForDebug">5.0</value>
       </record>
-      <record name="/3/1" javaclass="com.wm.util.Values">
+      <record name="/4/1" javaclass="com.wm.util.Values">
         <value name="itemType">SERVICES</value>
         <record name="serviceName" javaclass="com.wm.util.Values">
           <value name="displayName">dateTimeFormat</value>
@@ -222,13 +240,13 @@
         </array>
         <value name="nodePathForDebug">5.1</value>
       </record>
-      <null name="/3/2"/>
-      <null name="/3/3"/>
-      <null name="/3/4"/>
-      <null name="/3/5"/>
-      <null name="/3/6"/>
-      <null name="/3/7"/>
-      <record name="/4" javaclass="com.wm.util.Values">
+      <null name="/4/2"/>
+      <null name="/4/3"/>
+      <null name="/4/4"/>
+      <null name="/4/5"/>
+      <null name="/4/6"/>
+      <null name="/4/7"/>
+      <record name="/5" javaclass="com.wm.util.Values">
         <null name="name"/>
         <value name="itemType">SERVICES</value>
         <record name="serviceInfo" javaclass="com.wm.util.Values">
@@ -250,7 +268,7 @@
         <Boolean name="serviceReferenceResolved">true</Boolean>
         <value name="nodePathForDebug">6</value>
       </record>
-      <record name="/5" javaclass="com.wm.util.Values">
+      <record name="/6" javaclass="com.wm.util.Values">
         <value name="name">Kafka</value>
         <value name="itemType">APPS</value>
         <record name="operation" javaclass="com.wm.util.Values">
