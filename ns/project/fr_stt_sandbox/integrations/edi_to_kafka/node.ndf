@@ -63,7 +63,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1790080620270</value>
+    <value name="lastModifiedDate">1790080824006</value>
     <value name="displayName">edi_to_kafka</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -91,7 +91,7 @@
         </record>
         <null name="outputMapSet"/>
         <null name="mapSet"/>
-        <number name="ui_step_index" type="Long">2</number>
+        <number name="ui_step_index" type="Long">1</number>
         <value name="nodePathNew">0</value>
         <number name="nodeIndex" type="Long">0</number>
         <number name="lineNumberForDebug" type="Long">1</number>
@@ -186,10 +186,10 @@
       <record name="/3" javaclass="com.wm.util.Values">
         <value name="itemType">CONTROLS</value>
         <value name="name">TRANSFORM</value>
-        <number name="ui_step_index" type="Long">5</number>
-        <value name="nodePathNew">4</value>
-        <number name="nodeIndex" type="Long">4</number>
-        <number name="lineNumberForDebug" type="Long">5</number>
+        <number name="ui_step_index" type="Long">4</number>
+        <value name="nodePathNew">3</value>
+        <number name="nodeIndex" type="Long">3</number>
+        <number name="lineNumberForDebug" type="Long">4</number>
         <array name="map" type="object" depth="1" javaclass="java.lang.Object">
         </array>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
@@ -203,13 +203,15 @@
         <value name="nodePathForDebug">3</value>
       </record>
       <null name="/3/0"/>
+      <record name="/3/1" javaclass="com.wm.util.Values">
+      </record>
       <record name="/4" javaclass="com.wm.util.Values">
         <value name="itemType">CONTROLS</value>
         <value name="name">TRANSFORM</value>
-        <number name="ui_step_index" type="Long">6</number>
-        <value name="nodePathNew">5</value>
-        <number name="nodeIndex" type="Long">5</number>
-        <number name="lineNumberForDebug" type="Long">6</number>
+        <number name="ui_step_index" type="Long">5</number>
+        <value name="nodePathNew">4</value>
+        <number name="nodeIndex" type="Long">4</number>
+        <number name="lineNumberForDebug" type="Long">5</number>
         <array name="map" type="object" depth="1" javaclass="java.lang.Object">
         </array>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
@@ -232,7 +234,6 @@
         <Boolean name="serviceReferenceResolved">true</Boolean>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <value name="nodePathForDebug">4.0</value>
       </record>
       <record name="/4/1" javaclass="com.wm.util.Values">
         <value name="itemType">SERVICES</value>
@@ -244,7 +245,6 @@
         <Boolean name="serviceReferenceResolved">true</Boolean>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <value name="nodePathForDebug">4.1</value>
       </record>
       <null name="/4/2"/>
       <null name="/4/3"/>
@@ -252,6 +252,8 @@
       <null name="/4/5"/>
       <null name="/4/6"/>
       <null name="/4/7"/>
+      <record name="/4/8" javaclass="com.wm.util.Values">
+      </record>
       <record name="/5" javaclass="com.wm.util.Values">
         <null name="name"/>
         <value name="itemType">SERVICES</value>
@@ -265,10 +267,10 @@
           <value name="serviceName">pub.json:documentToJSON</value>
           <value name="transformerSupport">true</value>
         </record>
-        <number name="ui_step_index" type="Long">7</number>
-        <value name="nodePathNew">6</value>
-        <number name="nodeIndex" type="Long">6</number>
-        <number name="lineNumberForDebug" type="Long">7</number>
+        <number name="ui_step_index" type="Long">6</number>
+        <value name="nodePathNew">5</value>
+        <number name="nodeIndex" type="Long">5</number>
+        <number name="lineNumberForDebug" type="Long">6</number>
         <null name="mapSet"/>
         <null name="outputMapSet"/>
         <Boolean name="serviceReferenceResolved">true</Boolean>
@@ -324,10 +326,10 @@
         </array>
         <array name="outputMap" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <number name="ui_step_index" type="Long">8</number>
-        <value name="nodePathNew">7</value>
-        <number name="nodeIndex" type="Long">7</number>
-        <number name="lineNumberForDebug" type="Long">8</number>
+        <number name="ui_step_index" type="Long">7</number>
+        <value name="nodePathNew">6</value>
+        <number name="nodeIndex" type="Long">6</number>
+        <number name="lineNumberForDebug" type="Long">7</number>
         <Boolean name="xmlMapsetSupported">true</Boolean>
         <null name="mapSet"/>
         <null name="outputMapSet"/>
