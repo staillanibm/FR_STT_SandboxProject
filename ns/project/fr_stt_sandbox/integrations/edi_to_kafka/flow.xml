@@ -6,7 +6,7 @@
   <!-- nodes -->
 
 <INVOKE NAME="sttUtils" SERVICE="sttUtils.services.java:readFileAsString">
-  <COMMENT></COMMENT>
+  <COMMENT>Read EDI file</COMMENT>
 
   <!-- nodes -->
 
@@ -202,7 +202,7 @@
 </INVOKE>
 
 <INVOKE NAME="String" SERVICE="pub.string:stringToBytes">
-  <COMMENT></COMMENT>
+  <COMMENT>Convert EDI file content to bytes</COMMENT>
 
   <!-- nodes -->
 
@@ -386,7 +386,7 @@
 </INVOKE>
 
 <INVOKE NAME="Invoke predefined:ffconnector" TIMEOUT="" SERVICE="pub.flatFile:convertToValues" VALIDATE-IN="" VALIDATE-OUT="">
-  <COMMENT></COMMENT>
+  <COMMENT>Parse EDI file content</COMMENT>
 
   <!-- nodes -->
 
@@ -796,6 +796,19 @@
         </array>
         <value name="modifiable">true</value>
       </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ff_doc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">project.fr_stt_sandbox.documenttypes:ls_ff_ff</value>
+      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -881,6 +894,9 @@
 
   <!-- nodes -->
 
+<MAPCOPY FROM="/ffValues;2;0" TO="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff">
+</MAPCOPY>
+
 <MAPDELETE FIELD="/bytes;3;0">
 </MAPDELETE>
 
@@ -904,7 +920,7 @@
 </MAP>
 </INVOKE>
 
-<MAP NAME="TRANSFORM" TIMEOUT="" MODE="STANDALONE">
+<MAP NAME="TRANSFORM" TIMEOUT="" MODE="STANDALONE" DISABLED="true">
   <MAPTARGET>
 
 <Values version="2.0">
@@ -963,6 +979,19 @@
         </array>
         <value name="modifiable">true</value>
       </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ff_doc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">project.fr_stt_sandbox.documenttypes:ls_ff_ff</value>
+      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -992,6 +1021,20 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ffValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
@@ -1027,6 +1070,20 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
+        <value name="field_name">ffValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
         <value name="field_name">ff_doc</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
@@ -1056,12 +1113,6 @@
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/convertAs;1;0">
-  <DATA ENCODING="XMLValues" I18N="true">
-
-<Values version="2.0">
-  <value name="xml">java.lang.Long</value>
-</Values>
-</DATA>
 </MAPSET>
 </MAP>
 
@@ -1086,21 +1137,9 @@
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/currentPattern;1;0">
-  <DATA ENCODING="XMLValues" I18N="true">
-
-<Values version="2.0">
-  <value name="xml">yyyyMMddHHmmss</value>
-</Values>
-</DATA>
 </MAPSET>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/newPattern;1;0">
-  <DATA ENCODING="XMLValues" I18N="true">
-
-<Values version="2.0">
-  <value name="xml">yyyy-MM-dd'T'HH:mm:ss.SSSZ</value>
-</Values>
-</DATA>
 </MAPSET>
 </MAP>
 
@@ -1344,6 +1383,20 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
+        <value name="field_name">ffValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
         <value name="field_name">event</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
@@ -1380,6 +1433,20 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ffValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
@@ -1583,6 +1650,20 @@
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ffValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
@@ -1645,6 +1726,20 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ffValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>

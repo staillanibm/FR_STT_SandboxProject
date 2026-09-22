@@ -63,7 +63,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1790081086068</value>
+    <value name="lastModifiedDate">1790081610974</value>
     <value name="displayName">edi_to_kafka</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
