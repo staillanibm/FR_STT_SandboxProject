@@ -27,7 +27,7 @@ services:
     wpmRegistry: licensed
   - name: WmFlatFile
     version: 10.7.0.0.39
-- serviceName: project.fr_stt_sandbox.integrations:parseEDI
+- serviceName: project.fr_stt_sandbox.integrations:edi_to_kafka
   packages:
   - name: FR_STT_SandboxProject
     version: "1.0"
@@ -43,6 +43,16 @@ services:
     version: 12.1.0.0.1032
 - serviceName: pub.flatFile:convertToValues
   packages:
+  - name: WmFlatFile
+    version: 10.7.0.0.39
+- serviceName: project.fr_stt_sandbox.integrations:parseEDI
+  packages:
+  - name: FR_STT_SandboxProject
+    version: "1.0"
+  - name: WmMQAdapter
+    version: 6.5.0.0.19
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
   - name: WmFlatFile
     version: 10.7.0.0.39
 configurationVariables:
