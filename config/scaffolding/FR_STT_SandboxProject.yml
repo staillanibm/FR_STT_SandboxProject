@@ -15,6 +15,11 @@ packages:
   version: 9.6.0.0.26
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: sttUtils
+  gitServerName: staillanibm
+  gitUrl: https://github.com/staillanibm
+  gitUsername: staillanibm
+  gitBranch: main
 security:
 - name: JcPublicTools
   allowedServices: []
