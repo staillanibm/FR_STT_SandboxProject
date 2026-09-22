@@ -45,16 +45,6 @@ services:
   packages:
   - name: WmFlatFile
     version: 10.7.0.0.39
-- serviceName: project.fr_stt_sandbox.integrations:parseEDI
-  packages:
-  - name: FR_STT_SandboxProject
-    version: "1.0"
-  - name: WmMQAdapter
-    version: 6.5.0.0.19
-    wpmServer: https://packages.webmethods.io
-    wpmRegistry: licensed
-  - name: WmFlatFile
-    version: 10.7.0.0.39
 configurationVariables:
   jdbc.SAP TxStore Pool.maxConns: "10"
   jdbcfunc.SAPTxStore.failFastMode: false
