@@ -428,7 +428,7 @@
 </MAP>
 </INVOKE>
 
-<INVOKE NAME="Invoke predefined:com.wm.adapter.wmkafka.KafkaAdapter" TIMEOUT="" SERVICE="project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:produceContractEvent" VALIDATE-IN="" VALIDATE-OUT="">
+<INVOKE NAME="Invoke predefined:com.wm.adapter.wmkafka.KafkaAdapter" TIMEOUT="" SERVICE="project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:produceContractEvent" VALIDATE-IN="" VALIDATE-OUT="" DISABLED="true">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
