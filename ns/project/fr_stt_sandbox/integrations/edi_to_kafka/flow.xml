@@ -1702,13 +1702,58 @@
 </MAP>
 </MAPINVOKE>
 
+<MAPINVOKE NAME="Date" SERVICE="pub.date:dateTimeFormat" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/HDR;2;0/fileDate;1;0" TO="/inString;1;0">
+</MAPCOPY>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/currentPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">yyyyMMdd</value>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/newPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">yyyy-MM-dd'T'HH:mm:ss.SSSZ</value>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/value;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventTimestamp;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventId;1;0">
 </MAPCOPY>
 
 <MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/assetType;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/assetType;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;1/currency;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/currency;1;0">
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/customerId;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/contractId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/contractId;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/currency;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/currency;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/eventType;1;0">
@@ -1719,12 +1764,6 @@
 </Values>
 </DATA>
 </MAPSET>
-
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CUS;2;0/customerId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/customerId;1;0">
-</MAPCOPY>
-
-<MAPCOPY FROM="/ff_doc;4;0;project.fr_stt_sandbox.documenttypes:ls_ff_ff/CON;2;0/contractId;1;0" TO="/event;4;0;project.fr_stt_sandbox.documenttypes:ls_contract_event/contractId;1;0">
-</MAPCOPY>
 </MAP>
 
 <INVOKE NAME="Invoke predefined:com.wm.adapter.wmkafka.KafkaAdapter" TIMEOUT="" SERVICE="project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:produceContractEvent" VALIDATE-IN="" VALIDATE-OUT="" DISABLED="true">
