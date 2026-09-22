@@ -17,6 +17,7 @@ packages:
   wpmRegistry: licensed
   wpmVersion: latest
 - name: WmKafkaAdapter
+  version: 9.6.0.0.26
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
@@ -76,18 +77,31 @@ configurationVariables:
   : "0"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.poolIncrementSize
   : "1"
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.trustStoreAlias
+  : ""
   jdbcfunc.SAPTxStore.failFastMode: false
   jdbc.SAP TxStore Pool.poolThreshold: "0"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.minimumPoolSize
   : "1"
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.securityProtocol
+  : SASL_PLAINTEXT
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.poolable
   : "false"
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.kafkaVersion
+  : v11+
+  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
   jdbc.SAP TxStore Pool.spyenabled: "false"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.compressionType
   : none
   jdbc.SAP TxStore Pool.useSSL: "false"
+  jdbc.SAP TxStore Pool.waitingThread: "10"
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.keyStoreAlias
+  : ""
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.startupBackoffSecs
   : "10"
+  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.serverList
+  : kafka:9094
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.otherProperties
   : sasl.mechanism=SCRAM-SHA-512;
   jdbc.SAP TxStore Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
@@ -103,38 +117,21 @@ configurationVariables:
   jdbc.SAP TxStore Pool.snoopenabled: "false"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.maximumPoolSize
   : "10"
+  jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.maxRetry
+  : "2147483647"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionEnabled
   : "false"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.requestTimeOut
   : "30000"
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.sendBufferSize
+  : "131072"
   jdbc.SAP TxStore Pool.expireTime: "60000"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionManagerSettings.blockingTimeout
   : "1000"
   jdbc.SAP TxStore Pool.minConns: "5"
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.ackIndicator
   : all
-  jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.batchSize
-  : "16384"
-  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.trustStoreAlias
-  : ""
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.securityProtocol
-  : SASL_PLAINTEXT
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.kafkaVersion
-  : v11+
-  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
-  jdbc.SAP TxStore Pool.waitingThread: "10"
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.keyStoreAlias
-  : ""
-  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.serverList
-  : kafka:9092
-  jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.maxRetry
-  : "2147483647"
-  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.sendBufferSize
-  : "131072"
   jdbc.SAP TxStore Pool.userid: root
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.partitionerClass
   : ""
@@ -142,3 +139,7 @@ configurationVariables:
   : org.apache.kafka.common.serialization.StringSerializer
   ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.jaasConfig
   : "{AES}xkk3cDXNQRXiX+6aC6V4Serh/u0uYgPSfWKQUENnQ7BRYPxC1UshrK5nFhDDtgRDxdRTqyu5FDLTj2Va9tySrZwVQl1I3IW4s7qzPvddshoeaO4Md48I/7jPFokHfJpzX2X3ExB9qw4KBkO/Csb0Uw=="
+  jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
+  ? artConnection.FR_STT_SandboxProject.project.fr_stt_sandbox.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.kafkaProducer.connectionSettings.batchSize
+  : "16384"
+  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
