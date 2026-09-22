@@ -63,7 +63,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1790054936379</value>
+    <value name="lastModifiedDate">1790055096186</value>
     <value name="displayName">edi_to_kafka</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -322,6 +322,13 @@
         </array>
         <Boolean name="accountReferenceResolved">true</Boolean>
         <value name="nodePathForDebug">6</value>
+        <number name="ui_step_index" type="Long">7</number>
+        <value name="nodePathNew">6</value>
+        <number name="nodeIndex" type="Long">6</number>
+        <number name="lineNumberForDebug" type="Long">7</number>
+        <Boolean name="xmlMapsetSupported">true</Boolean>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
       </record>
     </record>
   </record>
