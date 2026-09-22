@@ -11,11 +11,6 @@ packages:
   version: 10.7.0.0.39
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
-- name: WmMQAdapter
-  version: 6.5.0.0.19
-  wpmServer: https://packages.webmethods.io
-  wpmRegistry: licensed
-  wpmVersion: latest
 - name: WmKafkaAdapter
   version: 9.6.0.0.26
   wpmServer: https://packages.webmethods.io
