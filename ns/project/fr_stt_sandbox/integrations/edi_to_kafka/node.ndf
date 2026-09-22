@@ -63,7 +63,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1790053941965</value>
+    <value name="lastModifiedDate">1790054126995</value>
     <value name="displayName">edi_to_kafka</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -220,6 +220,7 @@
         </array>
         <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
         </array>
+        <value name="nodePathForDebug">4</value>
       </record>
       <null name="/4/0"/>
       <record name="/5" javaclass="com.wm.util.Values">
@@ -239,6 +240,7 @@
         </array>
         <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
         </array>
+        <value name="nodePathForDebug">5</value>
       </record>
       <record name="/5/0" javaclass="com.wm.util.Values">
         <value name="itemType">SERVICES</value>
@@ -254,6 +256,7 @@
         </record>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
         </array>
+        <value name="nodePathForDebug">5.0</value>
       </record>
       <null name="/5/1"/>
       <null name="/5/2"/>
@@ -312,7 +315,7 @@
         <array name="outputMap" type="object" depth="1" javaclass="java.lang.Object">
         </array>
         <Boolean name="accountReferenceResolved">true</Boolean>
-        <value name="nodePathForDebug">4</value>
+        <value name="nodePathForDebug">6</value>
       </record>
     </record>
   </record>
