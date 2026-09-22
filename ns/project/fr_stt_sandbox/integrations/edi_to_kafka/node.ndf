@@ -63,7 +63,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1790064853347</value>
+    <value name="lastModifiedDate">1790065688858</value>
     <value name="displayName">edi_to_kafka</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -112,6 +112,8 @@
         <value name="nodePathNew">1</value>
         <number name="nodeIndex" type="Long">1</number>
         <number name="lineNumberForDebug" type="Long">2</number>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">1</value>
       </record>
       <record name="/2" javaclass="com.wm.util.Values">
         <value name="name">Flat File</value>
@@ -175,7 +177,7 @@
         <null name="outputMapSet"/>
         <Boolean name="xmlMapsetSupported">true</Boolean>
         <Boolean name="accountReferenceResolved">true</Boolean>
-        <value name="nodePathForDebug">1</value>
+        <value name="nodePathForDebug">2</value>
       </record>
       <record name="/3" javaclass="com.wm.util.Values">
         <value name="itemType">CONTROLS</value>
@@ -194,7 +196,7 @@
         </array>
         <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <value name="nodePathForDebug">4</value>
+        <value name="nodePathForDebug">3</value>
       </record>
       <null name="/3/0"/>
       <record name="/4" javaclass="com.wm.util.Values">
@@ -214,7 +216,7 @@
         </array>
         <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <value name="nodePathForDebug">5</value>
+        <value name="nodePathForDebug">4</value>
       </record>
       <record name="/4/0" javaclass="com.wm.util.Values">
         <value name="itemType">SERVICES</value>
@@ -226,7 +228,7 @@
         <Boolean name="serviceReferenceResolved">true</Boolean>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <value name="nodePathForDebug">5.0</value>
+        <value name="nodePathForDebug">4.0</value>
       </record>
       <record name="/4/1" javaclass="com.wm.util.Values">
         <value name="itemType">SERVICES</value>
@@ -238,7 +240,7 @@
         <Boolean name="serviceReferenceResolved">true</Boolean>
         <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
         </array>
-        <value name="nodePathForDebug">5.1</value>
+        <value name="nodePathForDebug">4.1</value>
       </record>
       <null name="/4/2"/>
       <null name="/4/3"/>
@@ -266,7 +268,7 @@
         <null name="mapSet"/>
         <null name="outputMapSet"/>
         <Boolean name="serviceReferenceResolved">true</Boolean>
-        <value name="nodePathForDebug">6</value>
+        <value name="nodePathForDebug">5</value>
       </record>
       <record name="/6" javaclass="com.wm.util.Values">
         <value name="name">Kafka</value>
@@ -325,6 +327,7 @@
         <Boolean name="xmlMapsetSupported">true</Boolean>
         <null name="mapSet"/>
         <null name="outputMapSet"/>
+        <value name="nodePathForDebug">6</value>
       </record>
     </record>
   </record>
